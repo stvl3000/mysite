@@ -1,7 +1,11 @@
-<h1>{{question.question_text}}</h1>
+{% load staticfiles %}
+<link rel = "stylesheet" type = "text/css" href="{% static 'polls/style.css' %}" />
+<div class ="body-div"><h2 id="header">{{question.question_text}}</h2>
 <ul>
 {% for choice in question.choice_set.all %}
 	<li>{{choice.choice_text}} -- {{choice.votes}} vote{{choice.votes|pluralize}}</li>
 {% endfor%}
+
+<li class="button liststyletypenone"><a href = "{%url 'polls:detail' question.id %}">Vote again?</a></li>
 </ul>
-<a href = "{%url 'polls:detail' question.id %}">Vote again?</a>
+</div>

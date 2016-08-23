@@ -1,11 +1,16 @@
-<h1>{{question.question_text}}</h1>
-{% if error_message %}<p><strong>{{error_message}}</strong></p>
+{% load staticfiles %}
+<link rel = "stylesheet" type = "text/css" href="{% static 'polls/style.css' %}" />
+<div class="body-div">
+<h2 id="header">{{question.question_text}}</h2>
+{% if error_message %}<p style="margin-left:30;color:red"><strong>{{error_message}}</strong></p>
 {% endif %}
 <form action="{% url 'polls:vote' question.id %}" method = "post">
 {% csrf_token %}
+<ul class="liststyletypenone">
 {% for choice in question.choice_set.all %}
-	<input type ="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id}}"/>
-	<label for ="choice{{ forloop.counter }}">{{ choice.choice_text}}</label><br/>
+	<li><input type ="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id}}"/>
+	<label for ="choice{{ forloop.counter }}">{{ choice.choice_text}}</label></li>
 {% endfor %}
-<input type = "submit" value = "Vote"/>	
+<li class="button"><input type = "submit" value = "Vote"/></li>	
 </form>
+</div>
