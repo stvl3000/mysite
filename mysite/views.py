@@ -113,7 +113,7 @@ def index_temp(request):
             <div class="whiteback">
             <div style="max-width:600px; margin:auto">    
             <dl class="list-features">
-                <dt align="left"><i class="icon inview">&#9755;</i><a style="margin-left:0px" href="polls/">Polls App Demo on this site</a></dt>
+                <dt align="left"><i class="icon inview">☞</i><a style="margin-left:0px" href="polls/">Polls App Demo on this site</a></dt>
                 <dd>
                 <p>The demo polls app created according the Django official tutorial, Writing you first Django app, has been lunched here.</p>
                 </dd>
